@@ -28,8 +28,8 @@ echo -e "\e[031m" "     █────▀────█       For More info...
 echo -e "\e[036m" "╔════════════════════════════════════════╗"                                                                          
 echo -e "\e[032m" "║ ♚ Project Name : 🆃🅴🆁🅼🆄🆇-🆈🆃🅳 2.0™        ║"
 echo -e "\e[032m" "║ ♚ Author : KhanSaad1275                ║"
-echo -e "\e[032m" "║ ♚ Github : g̲i̲t̲h̲u̲b̲.̲c̲o̲m̲/̲k̲h̲a̲n̲s̲a̲a̲d̲1̲2̲7̲5̲/̲    ║"
-echo -e "\e[032m" "║ ♚ Website : www.LearnTermux.tech       ║"
+echo -e "\e[032m" "║ ♚ Github : github.com/Monir420/Termux-YTD2.0/̲ ║"
+echo -e "\e[032m" "║ ♚ Email  : bdmonir77@gmail.com       ║"
 echo -e "\e[036m" "╠════════════════════════════════════════╝"
 echo -e "\e[036m" "╠═▶ [𝗦𝗲𝗹𝗲𝗰𝘁 𝗔 𝗙𝗼𝗿𝗺𝗮𝘁]  ➳"
 echo -e "\e[032m" "╠═▶ 1. Music M4a 128kbps♫"
@@ -38,8 +38,9 @@ echo -e "\e[032m" "╠═▶ 3. Video 480p"
 echo -e "\e[032m" "╠═▶ 4. Video 720p"
 echo -e "\e[032m" "╠═▶ 5. Video 1080p"
 echo -e "\e[032m" "╠═▶ 6. Video 2160p"
-echo -e "\e[032m" "╠═▶ 7. Exit Termux-YTD" 
-echo -e "\e[032m" "╠═▶ 8. Music Mp3 256Kbps" 
+echo -e "\e[032m" "╠═▶ 7. Music Mp3 256Kbps"
+echo -e "\e[032m" "╠═▶ 8. Music Mp3 64Kbps"
+echo -e "\e[032m" "╠═▶ 9. Exit Termux-YTD" 
 echo -e "\e[032m" "╠═▶ A. About." 
 printf "\e[032m ╚═:➤ \e[0m "
 read choice
@@ -70,14 +71,18 @@ case $choice in
 	yt-dlp -f 'best[height<=2160]' -o $fpath $1 
 	;;
 
-	7)
-	break
+        7)
+	yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -o $fpath $1
 	;;
 
         8)
-	yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -o $fpath $1
+	yt-dlp --extract-audio --audio-format mp3 --audio-quality 10 -o $fpath $1
 	;;
-	
+
+	9)
+	break
+	;;
+
 	A|a)
 	echo "Hello this is Saad! , Termux-YTD2.0 is a light weight tool to download any kind of Video, Music or shorts from Youtube with 2 clicks on your phone using Termux. For more information and tools you can check out my github https://github.com/khansaad1275/Termux-YTD2.0. Visit my website LEARNTERMUX.TECH for more termux releted containts"
 	;;
