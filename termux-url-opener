@@ -32,13 +32,14 @@ echo -e "\e[032m" "║ ♚ Github : g̲i̲t̲h̲u̲b̲.̲c̲o̲m̲/̲k̲h̲a̲n�
 echo -e "\e[032m" "║ ♚ Website : www.LearnTermux.tech       ║"
 echo -e "\e[036m" "╠════════════════════════════════════════╝"
 echo -e "\e[036m" "╠═▶ [𝗦𝗲𝗹𝗲𝗰𝘁 𝗔 𝗙𝗼𝗿𝗺𝗮𝘁]  ➳"
-echo -e "\e[032m" "╠═▶ 1. Music Mp3♫"
+echo -e "\e[032m" "╠═▶ 1. Music M4a♫"
 echo -e "\e[032m" "╠═▶ 2. Video 360p"
 echo -e "\e[032m" "╠═▶ 3. Video 480p"
 echo -e "\e[032m" "╠═▶ 4. Video 720p"
 echo -e "\e[032m" "╠═▶ 5. Video 1080p"
 echo -e "\e[032m" "╠═▶ 6. Video 2160p"
 echo -e "\e[032m" "╠═▶ 7. Exit Termux-YTD" 
+echo -e "\e[032m" "╠═▶ 8. Music Mp3" 
 echo -e "\e[032m" "╠═▶ A. About." 
 printf "\e[032m ╚═:➤ \e[0m "
 read choice
@@ -71,6 +72,10 @@ case $choice in
 
 	7)
 	break
+	;;
+
+        8)
+	yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -o $fpath $1
 	;;
 	
 	A|a)
